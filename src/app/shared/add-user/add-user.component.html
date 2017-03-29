@@ -1,0 +1,82 @@
+<h1>Add User</h1>
+<div class="well bs-component col-lg-8">
+  <form class="form-horizontal" [formGroup]="form" (ngSubmit)="submit()">
+    <fieldset>
+      <legend>User</legend>
+      <div class="form-group">
+        <label for="inputName" class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="inputName" user.username placeholder="Name" formControlName="username">
+          <div *ngIf="username.touched && username.errors">
+            <div *ngIf="username.errors.required" class="alert alert-danger">Username is required</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+        <div class="col-lg-10">
+          <input  type="text" class="form-control" id="inputEmail" placeholder="Email" formControlName="email">
+          <div *ngIf="email.touched && email.errors">
+            <div *ngIf="email.errors.required" class="alert alert-danger">Email is required</div>
+            <div *ngIf="email.errors.incorrectMailFormat" class="alert alert-danger">Invalid email</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPhone" class="col-lg-2 control-label">Phone</label>
+        <div class="col-lg-10">
+          <input   type="text" class="form-control" id="inputPhone" placeholder="Phone" formControlName="phone">
+          <div *ngIf="phone.touched && phone.errors">
+            <div *ngIf="phone.errors.required" class="alert alert-danger">Phone is required</div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset formGroupName="address">
+      <legend>Address</legend>
+      <div class="form-group">
+        <label for="inputStreet" class="col-lg-2 control-label">Street</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="inputStreet" placeholder="Street" formControlName="street">
+          <div *ngIf="street.touched && street.errors">
+            <div *ngIf="street.errors.required" class="alert alert-danger">Street is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputSuite" class="col-lg-2 control-label">Suite</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="inputSuite" placeholder="Suite" formControlName="suite">
+          <div *ngIf="suite.touched && suite.errors">
+            <div *ngIf="suite.errors.required" class="alert alert-danger">Suite is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputCity" class="col-lg-2 control-label">City</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="inputCity" placeholder="City" formControlName="city">
+          <div *ngIf="city.touched && city.errors">
+            <div *ngIf="city.errors.required" class="alert alert-danger">City is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputZipCode" class="col-lg-2 control-label">ZipCode</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control" id="inputZipCode" placeholder="ZipCode" formControlName="zipcode">
+          <div *ngIf="zipcode.touched && zipcode.errors">
+            <div *ngIf="zipcode.errors.required" class="alert alert-danger">ZipCode is required</div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>

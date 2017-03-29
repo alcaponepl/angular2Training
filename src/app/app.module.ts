@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { SharedModule } from './shared/shared.module'
 import { routes } from './app.router'
+import { PreventUnsavedChangesGuard } from './shared/prevent-unsaved-changes-guard';
 
 import { AppComponent } from './app.component';
 
@@ -18,7 +19,7 @@ import { AppComponent } from './app.component';
     SharedModule,
     routes
   ],
-  providers: [],
+  providers: [PreventUnsavedChangesGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

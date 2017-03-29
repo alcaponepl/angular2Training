@@ -11,10 +11,12 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a routerLink="users">Users <span class="sr-only">(current)</span></a></li>
-        <li><a routerLink="posts">Posts</a></li>
+        <li [routerLinkActive]="['active']"><a routerLink="users" >Users <span class="sr-only">(current)</span></a></li>
+        <li [routerLinkActive]="['active']"><a routerLink="posts">Posts</a></li>
       </ul>
     </div>
   </div>
 </nav>
-<router-outlet></router-outlet>
+<div class="col-md-12">
+  <router-outlet></router-outlet>
+</div>
